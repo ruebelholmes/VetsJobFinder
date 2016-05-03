@@ -10,6 +10,7 @@ namespace VetsJobFinder.Models
     {
         public int EmployerId { get; set; }
         [Required]
+        [MaxLength(40)]
         public string CompanyName { get; set; }
         [Required]
         public string EmployerEmail { get; set; }

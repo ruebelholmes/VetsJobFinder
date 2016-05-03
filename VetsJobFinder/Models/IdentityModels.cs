@@ -10,13 +10,15 @@ namespace VetsJobFinder.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public int UserId { get; set; }
+       
         [Required]
+        [MaxLength(25)]
         public string FirstName { get; set; }
         [Required]
+        [MaxLength(30)]
         public string LastName { get; set; }
-        [Required]
-        public string EmailAddress { get; set; }
+    
+       
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -39,5 +41,6 @@ namespace VetsJobFinder.Models
         }
 
         public System.Data.Entity.DbSet<VetsJobFinder.Models.Employer> Employers { get; set; }
+        public object User { get; set; }
     }
 }
