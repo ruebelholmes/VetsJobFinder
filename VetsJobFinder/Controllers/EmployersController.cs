@@ -6,112 +6,111 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using VetsJobFinder.Migrations;
 using VetsJobFinder.Models;
 
 namespace VetsJobFinder.Controllers
 {
-    public class UsersController : Controller
+    public class EmployersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Users
+        // GET: Employers
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            return View(db.Employers.ToList());
         }
 
-        // GET: Users/Details/5
+        // GET: Employers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Employer employer = db.Employers.Find(id);
+            if (employer == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(employer);
         }
 
-        // GET: Users/Create
+        // GET: Employers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Users/Create
+        // POST: Employers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,FirstName,LastName,EmailAddress")] User user)
+        public ActionResult Create([Bind(Include = "EmployerId,CompanyName,EmployerEmail")] Employer employer)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.Employers.Add(employer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(user);
+            return View(employer);
         }
 
-        // GET: Users/Edit/5
+        // GET: Employers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Employer employer = db.Employers.Find(id);
+            if (employer == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(employer);
         }
 
-        // POST: Users/Edit/5
+        // POST: Employers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,FirstName,LastName,EmailAddress")] User user)
+        public ActionResult Edit([Bind(Include = "EmployerId,CompanyName,EmployerEmail")] Employer employer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(employer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(user);
+            return View(employer);
         }
 
-        // GET: Users/Delete/5
+        // GET: Employers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Employer employer = db.Employers.Find(id);
+            if (employer == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(employer);
         }
 
-        // POST: Users/Delete/5
+        // POST: Employers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
+            Employer employer = db.Employers.Find(id);
+            db.Employers.Remove(employer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

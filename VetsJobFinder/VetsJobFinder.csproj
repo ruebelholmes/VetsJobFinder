@@ -197,15 +197,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmployersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201605031609518_Initial.cs" />
     <Compile Include="Migrations\201605031609518_Initial.Designer.cs">
       <DependentUpon>201605031609518_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605031653391_IdentityModelsClass.cs" />
+    <Compile Include="Migrations\201605031653391_IdentityModelsClass.Designer.cs">
+      <DependentUpon>201605031653391_IdentityModelsClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employer.cs" />
@@ -282,6 +286,11 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Employers\Create.cshtml" />
+    <Content Include="Views\Employers\Delete.cshtml" />
+    <Content Include="Views\Employers\Details.cshtml" />
+    <Content Include="Views\Employers\Edit.cshtml" />
+    <Content Include="Views\Employers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -300,6 +309,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605031609518_Initial.resx">
       <DependentUpon>201605031609518_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605031653391_IdentityModelsClass.resx">
+      <DependentUpon>201605031653391_IdentityModelsClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
