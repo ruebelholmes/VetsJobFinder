@@ -14,7 +14,11 @@ namespace VetsJobFinder.Models
         public SiteUser Employer { get; set; }
 
 
+        public DateTime StartApplicationDate { get; set; }
+        public DateTime EndApplicationDate { get; set; }
+
         public virtual ICollection<ApplyJob> JobsAppliedFor { get; set; } = new List<ApplyJob>();
 
+        
     }
 }

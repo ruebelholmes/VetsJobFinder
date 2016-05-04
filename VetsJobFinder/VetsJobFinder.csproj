@@ -202,6 +202,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsTempController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -209,6 +210,10 @@
     <Compile Include="Migrations\201605041900534_InitialCreate.cs" />
     <Compile Include="Migrations\201605041900534_InitialCreate.Designer.cs">
       <DependentUpon>201605041900534_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605041959581_startenddates.cs" />
+    <Compile Include="Migrations\201605041959581_startenddates.Designer.cs">
+      <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -281,6 +286,11 @@
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Jobs.cshtml" />
     <Content Include="Views\Account\Veterans.cshtml" />
+    <Content Include="Views\JobsTemp\Create.cshtml" />
+    <Content Include="Views\JobsTemp\Delete.cshtml" />
+    <Content Include="Views\JobsTemp\Details.cshtml" />
+    <Content Include="Views\JobsTemp\Edit.cshtml" />
+    <Content Include="Views\JobsTemp\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +309,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201605041900534_InitialCreate.resx">
       <DependentUpon>201605041900534_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605041959581_startenddates.resx">
+      <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

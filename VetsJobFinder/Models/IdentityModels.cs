@@ -67,5 +67,6 @@ namespace VetsJobFinder.Models
             return new ApplicationDbContext();
         }
 
+        public System.Data.Entity.DbSet<VetsJobFinder.Models.Job> Jobs { get; set; }
     }
 }
