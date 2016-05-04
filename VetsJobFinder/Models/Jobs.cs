@@ -5,14 +5,16 @@ using System.Web;
 
 namespace VetsJobFinder.Models
 {
-    public class Jobs
+    public class Job
     {
-        public Jobs Id { get; set; }
+        public int Id { get; set; }
         public DateTime PostedOn { get; set; } = DateTime.Now;
-        public string JobTitle { get; set; }
-        public string JobDescription { get; set; }
-        public string JobEmployer { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public SiteUser Employer { get; set; }
 
-        
+
+        public virtual ICollection<ApplyJob> JobsAppliedFor { get; set; } = new List<ApplyJob>();
+
     }
 }
