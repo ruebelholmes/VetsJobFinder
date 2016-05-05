@@ -86,7 +86,13 @@ namespace VetsJobFinder.Controllers
             {
                 return HttpNotFound();
             }
-            return View(job);
+
+            var model = new EditJobVM();
+            model.AppEnd = job.StartApplicationDate;
+            model.AppStart = job.EndApplicationDate;
+            model.Description = job.Description;
+            model.Title = job.Title;
+            return View(model);
         }
 
         // POST: JobsTemp/Edit/5
@@ -94,15 +100,28 @@ namespace VetsJobFinder.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PostedOn,Title,Description")] Job job)
+        public ActionResult Edit(EditJobVM editJob)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(job).State = EntityState.Modified;
+                var userid = User.Identity.GetUserId();
+                var currentUser = db.Users.Find(userid);
+
+                var job = new Job
+                {
+                    Description = editJob.Description,
+                    Title = editJob.Title,
+                    EndApplicationDate = editJob.AppEnd,
+                    StartApplicationDate = editJob.AppStart,
+                    Employer = currentUser,
+                    PostedOn = DateTime.Now
+                };
+
+                db.Jobs.Add(job);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(job);
+            return View(editJob);
         }
 
         // GET: JobsTemp/Delete/5
