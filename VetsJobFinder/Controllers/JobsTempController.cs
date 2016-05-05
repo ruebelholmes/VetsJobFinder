@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using VetsJobFinder.Models;
+using VetsJobFinder.Models.ViewModels;
 
 namespace VetsJobFinder.Controllers
 {
@@ -39,6 +41,7 @@ namespace VetsJobFinder.Controllers
         public ActionResult Create()
         {
             return View();
+
         }
 
         // POST: JobsTemp/Create
@@ -46,16 +49,29 @@ namespace VetsJobFinder.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PostedOn,Title,Description")] Job job)
+        public ActionResult Create( CreateJobVM newJob)
         {
             if (ModelState.IsValid)
             {
+                var userid = User.Identity.GetUserId();
+                var currentUser = db.Users.Find(userid);
+
+                var job = new Job
+                {
+                    Description = newJob.Description,
+                    Title = newJob.Title,
+                    EndApplicationDate = newJob.AppEnd,
+                    StartApplicationDate = newJob.AppStart,
+                    Employer = currentUser,
+                    PostedOn = DateTime.Now
+                };
+
                 db.Jobs.Add(job);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(job);
+            return View(newJob);
         }
 
         // GET: JobsTemp/Edit/5
