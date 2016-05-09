@@ -204,6 +204,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsTempController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ResumesTempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,7 +224,8 @@
     <Compile Include="Models\Resume.cs" />
     <Compile Include="Models\ViewModels\CreateJobVM.cs" />
     <Compile Include="Models\ViewModels\EditJobVM.cs" />
-    <Compile Include="Models\ViewModels\ResumeCreateVM.cs" />
+    <Compile Include="Models\ViewModels\CreateResumeVM.cs" />
+    <Compile Include="Models\ViewModels\EditResumeVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -295,10 +297,14 @@
     <Content Include="Views\JobsTemp\Details.cshtml" />
     <Content Include="Views\JobsTemp\Edit.cshtml" />
     <Content Include="Views\JobsTemp\Index.cshtml" />
+    <Content Include="Views\ResumesTemp\Create.cshtml" />
+    <Content Include="Views\ResumesTemp\Delete.cshtml" />
+    <Content Include="Views\ResumesTemp\Details.cshtml" />
+    <Content Include="Views\ResumesTemp\Edit.cshtml" />
+    <Content Include="Views\ResumesTemp\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Resume\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

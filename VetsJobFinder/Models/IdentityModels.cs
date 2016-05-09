@@ -68,5 +68,7 @@ namespace VetsJobFinder.Models
         }
 
         public System.Data.Entity.DbSet<VetsJobFinder.Models.Job> Jobs { get; set; }
+
+        public System.Data.Entity.DbSet<VetsJobFinder.Models.Resume> Resumes { get; set; }
     }
 }
