@@ -110,7 +110,7 @@ namespace VetsJobFinder.Controllers
                 };
 
 
-                db.Entry(editResume).State = EntityState.Modified;
+                db.Resumes.Add(resume);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

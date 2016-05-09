@@ -216,6 +216,10 @@
     <Compile Include="Migrations\201605041959581_startenddates.Designer.cs">
       <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605091619371_addedResumeTable.cs" />
+    <Compile Include="Migrations\201605091619371_addedResumeTable.Designer.cs">
+      <DependentUpon>201605091619371_addedResumeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -323,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605041959581_startenddates.resx">
       <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605091619371_addedResumeTable.resx">
+      <DependentUpon>201605091619371_addedResumeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
