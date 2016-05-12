@@ -449,7 +449,7 @@ namespace VetsJobFinder.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Dashboard", "Jobs"); //redirect to a new page once logged in
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

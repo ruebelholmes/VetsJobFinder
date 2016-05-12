@@ -201,9 +201,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\JobsTempController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\ResumesTempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -294,18 +297,19 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Jobs.cshtml" />
     <Content Include="Views\Account\Veterans.cshtml" />
     <Content Include="Views\JobsTemp\Create.cshtml" />
     <Content Include="Views\JobsTemp\Delete.cshtml" />
     <Content Include="Views\JobsTemp\Details.cshtml" />
     <Content Include="Views\JobsTemp\Edit.cshtml" />
     <Content Include="Views\JobsTemp\Index.cshtml" />
-    <Content Include="Views\ResumesTemp\Create.cshtml" />
-    <Content Include="Views\ResumesTemp\Delete.cshtml" />
-    <Content Include="Views\ResumesTemp\Details.cshtml" />
-    <Content Include="Views\ResumesTemp\Edit.cshtml" />
-    <Content Include="Views\ResumesTemp\Index.cshtml" />
+    <Content Include="Views\Resumes\Create.cshtml" />
+    <Content Include="Views\Resumes\Delete.cshtml" />
+    <Content Include="Views\Resumes\Details.cshtml" />
+    <Content Include="Views\Resumes\Edit.cshtml" />
+    <Content Include="Views\Resumes\Index.cshtml" />
+    <Content Include="Views\Jobs\Dashboard.cshtml" />
+    <Content Include="Views\Jobs\Resume.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
