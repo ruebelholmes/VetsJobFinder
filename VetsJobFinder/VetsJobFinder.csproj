@@ -204,10 +204,8 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
-    <Compile Include="Controllers\JobsTempController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
-    <Compile Include="Controllers\ResumesTempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,10 +216,6 @@
     <Compile Include="Migrations\201605041959581_startenddates.cs" />
     <Compile Include="Migrations\201605041959581_startenddates.Designer.cs">
       <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605091619371_addedResumeTable.cs" />
-    <Compile Include="Migrations\201605091619371_addedResumeTable.Designer.cs">
-      <DependentUpon>201605091619371_addedResumeTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,18 +292,18 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Account\Veterans.cshtml" />
-    <Content Include="Views\JobsTemp\Create.cshtml" />
-    <Content Include="Views\JobsTemp\Delete.cshtml" />
-    <Content Include="Views\JobsTemp\Details.cshtml" />
-    <Content Include="Views\JobsTemp\Edit.cshtml" />
-    <Content Include="Views\JobsTemp\Index.cshtml" />
-    <Content Include="Views\Resumes\Create.cshtml" />
-    <Content Include="Views\Resumes\Delete.cshtml" />
-    <Content Include="Views\Resumes\Details.cshtml" />
-    <Content Include="Views\Resumes\Edit.cshtml" />
-    <Content Include="Views\Resumes\Index.cshtml" />
     <Content Include="Views\Jobs\Dashboard.cshtml" />
     <Content Include="Views\Jobs\Resume.cshtml" />
+    <Content Include="Views\Resume\Create.cshtml" />
+    <Content Include="Views\Resume\Delete.cshtml" />
+    <Content Include="Views\Resume\Details.cshtml" />
+    <Content Include="Views\Resume\Edit.cshtml" />
+    <Content Include="Views\Resume\Index.cshtml" />
+    <Content Include="Views\Jobs\Create.cshtml" />
+    <Content Include="Views\Jobs\Delete.cshtml" />
+    <Content Include="Views\Jobs\Details.cshtml" />
+    <Content Include="Views\Jobs\Edit.cshtml" />
+    <Content Include="Views\Jobs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -331,9 +325,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605041959581_startenddates.resx">
       <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605091619371_addedResumeTable.resx">
-      <DependentUpon>201605091619371_addedResumeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
