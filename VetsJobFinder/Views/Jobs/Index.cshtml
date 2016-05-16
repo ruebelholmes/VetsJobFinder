@@ -14,6 +14,13 @@
         <th>
             @Html.DisplayNameFor(model => model.PostedOn)
         </th>
+             <th>
+            @Html.DisplayNameFor(model => model.StartApplicationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndApplicationDate)
+        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
@@ -23,23 +30,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostedOn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartApplicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartApplicationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
