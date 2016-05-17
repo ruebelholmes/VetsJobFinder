@@ -1,27 +1,61 @@
 ﻿body {
     padding-bottom: 20px;
-    background-color: #fff;
+    background-color: #D3B798;
+}
+
+.navbar-right {
+    position: fixed;
+    right: 7%;
+}
+
+.table {
+    background-color: #FAE1C3;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 #6E574F;
+    padding: 15px;
+    border-top: none;
+}
+
+.jumbotron {
+    background-color: #898268;
+    box-shadow: 3px 3px 0 #6E574F;
+}
+
+.navbar-right ul li a {
+    color: #fff;
+    background-color: #61664F;
+}
+
+.navbar-right ul li a:visited {
+    color: #fff;
+}
+
+.body-content {
+    margin: 130px auto;
+    width: 50%;
+}
+
+
+.navbar-brand {
+    font-size: 3rem;
+    margin: 0 10px 0 0;
 }
 
 .navbar {
-    background-color: brown;
-    height: 100px;
-    position: relative;
+    background-color: #6E574F;
+    height: auto;
+    position: fixed;
 }
-
-
 
 .navbar ul {
-    background-color: brown;
+    background-color: #6E574F;
 }
 
-
-
-
-
 .navbar-collapse {
-    background-color: brown;
-
+    background-color: #6E574F;
+    float: left;
+    clear: both;
 }
 
 .navbar-collapse ul {
@@ -32,8 +66,9 @@
     background-color: rgba(255, 255, 255, .1);
     border-radius: 5px;
     box-shadow: 3px 2px 0 rgba(0,0,0,.3);
-    margin: 2px;
+    margin: 2px 0 10px 7px;
     color: #eee;
+    padding: 7px;
 }
 
 .navbar-collapse ul li a:visited{

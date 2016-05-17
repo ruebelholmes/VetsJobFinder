@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<VetsJobFinder.Models.Job>
 
+
+
+
 @{
     ViewBag.Title = "Index";
 }
@@ -9,7 +12,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table id="jobTable" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.PostedOn)
