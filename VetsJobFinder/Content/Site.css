@@ -1,6 +1,6 @@
 ﻿body {
     padding-bottom: 20px;
-    background-color: #D3B798;
+    background-color: #fff;
 }
 
 .navbar-right {
@@ -9,22 +9,22 @@
 }
 
 .table {
-    background-color: #FAE1C3;
+    background-color: #ADD8E6;
     color: #000;
     border-radius: 10px;
-    box-shadow: 3px 3px 0 #6E574F;
+    box-shadow: 3px 3px 0 #050402;
     padding: 15px;
     border-top: none;
 }
 
 .jumbotron {
-    background-color: #898268;
-    box-shadow: 3px 3px 0 #6E574F;
+    background-color: #406C8F;
+    box-shadow: 3px 3px 0 #555;
 }
 
 .navbar-right ul li a {
     color: #fff;
-    background-color: #61664F;
+    background-color:#406C8F;
 }
 
 .navbar-right ul li a:visited {
@@ -36,24 +36,31 @@
     width: 50%;
 }
 
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff !important;
+}
 
-.navbar-brand {
+.navbar-inverse {
+    color: #fff !important;
+}
+.navbar-inverse .navbar-brand {
     font-size: 3rem;
     margin: 0 10px 0 0;
+    color: #fff;
 }
 
 .navbar {
-    background-color: #6E574F;
+    background-color:#406C8F;
     height: auto;
     position: fixed;
 }
 
 .navbar ul {
-    background-color: #6E574F;
+    background-color:#406C8F;
 }
 
 .navbar-collapse {
-    background-color: #6E574F;
+    background-color:#406C8F;
     float: left;
     clear: both;
 }
@@ -67,22 +74,91 @@
     border-radius: 5px;
     box-shadow: 3px 2px 0 rgba(0,0,0,.3);
     margin: 2px 0 10px 7px;
-    color: #eee;
+    color: #fff;
     padding: 7px;
 }
 
 .navbar-collapse ul li a:visited{
-    color: #eee;
+    color: #fff;
 }
 
 .navbar-collapse ul li a:hover{
     background-color: rgba(255, 255, 255, .6);
 }
 
+.navbar-right ul li a:visited {
+    color: #ffffff;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: #adbecc;
+    box-shadow: 3px 2px 0 rgba(0, 0, 0, .6);
+    overflow: auto;
+    zoom: 1;
+}
+.landingHeadline {
+    text-align: center;
+    margin-top: 0;
+}
+
+.viewDash {
+    background-color: #406c8f;
+    color: #fff0f5;
+    box-shadow: 3px 2px 0 rgba(0,0,0,.7);
+    width: 80%;
+    margin: 15px auto;
+    display: block;
+}
+
+.dashboard {
+    background-color: #406c8f;
+    color: white;
+    box-shadow: 3px 2px 0 rgba(0,0,0,.7);
+    width: 150px;
+    margin-top: 30px;
+}
+.viewJobs {
+    float: left;
+    margin-left: 40px;
+
+}
+
+.manageResume {
+    float: right;
+    margin-right: 40px;
+}
+
+
+/*View Jobs*/
+
+.table {
+    background-color: #adbecc;
+    box-shadow: 3px 2px 0 rgba(0, 0, 0, .6);
+}
+
+.createJob {
+    background-color: #406c8f;
+    color: white;
+    box-shadow: 3px 2px 0 rgba(0,0,0,.7);
+}
+.goLeft {
+    float: left;
+    margin-left: 20%;
+}
+
+.backList {
+    background-color: #406c8f;
+    color: white;
+    box-shadow: 3px 2px 0 rgba(0,0,0,.7);
+    float: right;
+    margin-right: 25%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
