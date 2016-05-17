@@ -1,6 +1,47 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #fff;
+}
+
+.navbar {
+    background-color: brown;
+    height: 100px;
+    position: relative;
+}
+
+
+
+.navbar ul {
+    background-color: brown;
+}
+
+
+
+
+
+.navbar-collapse {
+    background-color: brown;
+
+}
+
+.navbar-collapse ul {
+    margin: 0 auto;
+}
+
+.navbar-collapse ul li a{
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+    box-shadow: 3px 2px 0 rgba(0,0,0,.3);
+    margin: 2px;
+    color: #eee;
+}
+
+.navbar-collapse ul li a:visited{
+    color: #eee;
+}
+
+.navbar-collapse ul li a:hover{
+    background-color: rgba(255, 255, 255, .6);
 }
 
 /* Set padding to keep content from hitting the edges */
