@@ -142,6 +142,10 @@
     background-color: #adbecc;
     box-shadow: 3px 2px 0 rgba(0, 0, 0, .6);
 }
+.listing {
+    background-color: #adbecc;
+    box-shadow: 3px 2px 0 rgba(0, 0, 0, .6);
+}
 
 .createJob {
     background-color: #406c8f;

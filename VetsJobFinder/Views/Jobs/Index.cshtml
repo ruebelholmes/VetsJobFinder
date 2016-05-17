@@ -7,53 +7,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Jobs Listing</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn createJob" })
+    @Html.ActionLink("Post a New Job", "Create", new {area = ""}, new {@class = "btn createJob"})
 </p>
-<table id="jobTable" class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PostedOn)
-        </th>
-             <th>
-            @Html.DisplayNameFor(model => model.StartApplicationDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndApplicationDate)
-        </th>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartApplicationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartApplicationDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
 
-</table>
+<div class="list-group listing">
+  @foreach (var item in Model)
+  {
+      <a class="list-group-item" href="@Url.Action("Details", new { id = item.Id })">
+          <div class="pull-right">
+              Start: @item.StartApplicationDate.ToString("MMMM dd, yyyy")<br/>
+              End: @item.EndApplicationDate.ToString("MMMM dd, yyyy")
+
+          </div>
+          <div>
+              <h4>@item.Title</h4>
+              <p>@item.Description</p>
+          </div>
+
+      </a>
+  }
+</div>
+
+
+
