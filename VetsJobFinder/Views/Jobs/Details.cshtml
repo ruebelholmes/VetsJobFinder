@@ -1,4 +1,5 @@
-﻿@model VetsJobFinder.Models.Job
+﻿@using System.Web.Mvc.Html
+@model VetsJobFinder.Models.Job
 
 @{
     ViewBag.Title = "Details";
@@ -37,6 +38,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { area = "" }, new { @class = "btn blueButton" }) 
+    @Html.ActionLink("Delete", "Delete",  new { area = "" }, new { @class = "btn blueButton" })
+    @Html.ActionLink("Back to List", "Index", new { area = "" }, new { @class = "btn blueButton" })
 </p>

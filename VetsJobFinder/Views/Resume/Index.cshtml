@@ -4,48 +4,26 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Resume Index</h2>
 
 <p>
-    <a class="btn btn-primary " href="@Url.Action("Create","Resume")">Add New Resume</a>
+    @Html.ActionLink("Post a New Resume", "Create", new { area = "" }, new { @class = "btn createJob" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PostedOn)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostedOn)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<div class="list-group listing">
+    @foreach (var item in Model)
+    {
+        <a class="list-group-item" href="@Url.Action("Details", new { id = item.Id })">
+            
+            <div>
+                <h4>@item.Title</h4>
+                <p>@item.Description</p>
+            </div>
 
-</table>
+        </a>
+    }
+</div>
+<div>
+    @Html.ActionLink("Back to Dashboard", "Dashboard", "Jobs", new { area = "" }, new { @class = "btn backList" })
+</div>
+

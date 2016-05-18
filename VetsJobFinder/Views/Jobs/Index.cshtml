@@ -1,8 +1,5 @@
 ﻿@model IEnumerable<VetsJobFinder.Models.Job>
 
-
-
-
 @{
     ViewBag.Title = "Index";
 }
@@ -15,21 +12,25 @@
 
 
 <div class="list-group listing">
-  @foreach (var item in Model)
-  {
-      <a class="list-group-item" href="@Url.Action("Details", new { id = item.Id })">
-          <div class="pull-right">
-              Start: @item.StartApplicationDate.ToString("MMMM dd, yyyy")<br/>
-              End: @item.EndApplicationDate.ToString("MMMM dd, yyyy")
+    @foreach (var item in Model)
+    {
+        <a class="list-group-item" href="@Url.Action("Details", new {id = item.Id})">
+            <div class="pull-right">
+                Start: @item.StartApplicationDate.ToString("MMMM dd, yyyy")<br/>
+                End: @item.EndApplicationDate.ToString("MMMM dd, yyyy")
 
-          </div>
-          <div>
-              <h4>@item.Title</h4>
-              <p>@item.Description</p>
-          </div>
+            </div>
+            <div>
+                <h4>@item.Title</h4>
+                <p>@item.Description</p>
+            </div>
 
-      </a>
-  }
+        </a>
+    }
+
+</div>
+<div>
+    @Html.ActionLink("Back to Dashboard", "Dashboard", "Jobs", new { area = "" }, new { @class = "btn backList" })
 </div>
 
 

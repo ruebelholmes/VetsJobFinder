@@ -90,6 +90,10 @@
     color: #ffffff;
 }
 
+.listing {
+    border-radius: 5px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -136,6 +140,7 @@
 }
 
 
+
 /*View Jobs*/
 
 .table {
@@ -147,14 +152,24 @@
     box-shadow: 3px 2px 0 rgba(0, 0, 0, .6);
 }
 
+.createButtons {
+    padding-left: 21%;
+    padding-right: 40%;
+}
 .createJob {
     background-color: #406c8f;
     color: white;
     box-shadow: 3px 2px 0 rgba(0,0,0,.7);
 }
+.blueButton {
+     background-color: #406c8f;
+    color: white;
+    box-shadow: 3px 2px 0 rgba(0,0,0,.7);
+}
+
 .goLeft {
     float: left;
-    margin-left: 20%;
+ 
 }
 
 .backList {
@@ -162,7 +177,7 @@
     color: white;
     box-shadow: 3px 2px 0 rgba(0,0,0,.7);
     float: right;
-    margin-right: 25%;
+ 
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
