@@ -209,13 +209,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605041900534_InitialCreate.cs" />
-    <Compile Include="Migrations\201605041900534_InitialCreate.Designer.cs">
-      <DependentUpon>201605041900534_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605041959581_startenddates.cs" />
-    <Compile Include="Migrations\201605041959581_startenddates.Designer.cs">
-      <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
+    <Compile Include="Migrations\201605191936068_Initial.cs" />
+    <Compile Include="Migrations\201605191936068_Initial.Designer.cs">
+      <DependentUpon>201605191936068_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -353,6 +349,7 @@
     </Content>
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\myvetjobs - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -492,11 +489,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605041900534_InitialCreate.resx">
-      <DependentUpon>201605041900534_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605041959581_startenddates.resx">
-      <DependentUpon>201605041959581_startenddates.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605191936068_Initial.resx">
+      <DependentUpon>201605191936068_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

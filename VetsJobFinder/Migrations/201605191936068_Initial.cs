@@ -3,32 +3,25 @@ namespace VetsJobFinder.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.AspNetRoles",
+                "dbo.Jobs",
                 c => new
                     {
-                        Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false, maxLength: 256),
+                        Id = c.Int(nullable: false, identity: true),
+                        PostedOn = c.DateTime(nullable: false),
+                        Title = c.String(),
+                        Description = c.String(),
+                        StartApplicationDate = c.DateTime(nullable: false),
+                        EndApplicationDate = c.DateTime(nullable: false),
+                        Employer_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .Index(t => t.Name, unique: true, name: "RoleNameIndex");
-            
-            CreateTable(
-                "dbo.AspNetUserRoles",
-                c => new
-                    {
-                        UserId = c.String(nullable: false, maxLength: 128),
-                        RoleId = c.String(nullable: false, maxLength: 128),
-                    })
-                .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId)
-                .Index(t => t.RoleId);
+                .ForeignKey("dbo.AspNetUsers", t => t.Employer_Id)
+                .Index(t => t.Employer_Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -86,20 +79,6 @@ namespace VetsJobFinder.Migrations
                 .Index(t => t.Job_Id);
             
             CreateTable(
-                "dbo.Jobs",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        PostedOn = c.DateTime(nullable: false),
-                        Title = c.String(),
-                        Description = c.String(),
-                        Employer_Id = c.String(maxLength: 128),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.Employer_Id)
-                .Index(t => t.Employer_Id);
-            
-            CreateTable(
                 "dbo.AspNetUserLogins",
                 c => new
                     {
@@ -111,33 +90,69 @@ namespace VetsJobFinder.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.AspNetUserRoles",
+                c => new
+                    {
+                        UserId = c.String(nullable: false, maxLength: 128),
+                        RoleId = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.UserId, t.RoleId })
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
+                .Index(t => t.UserId)
+                .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.Resumes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        UserName = c.String(),
+                        Title = c.String(),
+                        Description = c.String(),
+                        PostedOn = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.AspNetRoles",
+                c => new
+                    {
+                        Id = c.String(nullable: false, maxLength: 128),
+                        Name = c.String(nullable: false, maxLength: 256),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Name, unique: true, name: "RoleNameIndex");
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Jobs", "Employer_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.ApplyJobs", "Job_Id", "dbo.Jobs");
-            DropForeignKey("dbo.Jobs", "Employer_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.ApplyJobs", "Applicant_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
+            DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
-            DropIndex("dbo.Jobs", new[] { "Employer_Id" });
             DropIndex("dbo.ApplyJobs", new[] { "Job_Id" });
             DropIndex("dbo.ApplyJobs", new[] { "Applicant_Id" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
-            DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
-            DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Jobs", new[] { "Employer_Id" });
+            DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Resumes");
+            DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
-            DropTable("dbo.Jobs");
             DropTable("dbo.ApplyJobs");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.AspNetUserRoles");
-            DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Jobs");
         }
     }
 }

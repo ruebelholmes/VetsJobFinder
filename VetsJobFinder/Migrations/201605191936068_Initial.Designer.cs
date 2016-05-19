@@ -7,13 +7,13 @@ namespace VetsJobFinder.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class startenddates : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(startenddates));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201605041959581_startenddates"; }
+            get { return "201605191936068_Initial"; }
         }
         
         string IMigrationMetadata.Source
