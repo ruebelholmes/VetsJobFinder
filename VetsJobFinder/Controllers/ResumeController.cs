@@ -8,7 +8,7 @@ using VetsJobFinder.Models.ViewModels;
 
 namespace VetsJobFinder.Controllers
 {
-
+    [Authorize]
     public class ResumeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
